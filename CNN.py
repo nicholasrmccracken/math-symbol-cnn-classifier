@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 
 class SymbolClassifierCNN(nn.Module):
@@ -20,3 +21,9 @@ class SymbolClassifierCNN(nn.Module):
         x = nn.functional.relu(self.fc1(x))
         x = self.fc2(x)
         return x
+
+def load_trained_model():
+    model = SymbolClassifierCNN(num_classes=16)
+    model.load_state_dict(torch.load("symbol_classifier.pth"))
+    model.eval()
+    return model
