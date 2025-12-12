@@ -1,10 +1,12 @@
-## NN Project
+# CSE 5524 Final Project: Handwritten Math Symbol Identification
 
-Project set up
-1. Download the Data from Kaggle https://www.kaggle.com/datasets/clarencezhao/handwritten-math-symbol-dataset/data
-    - In the kaggle dataset, there are a few folders that will need to be deleted
-    - In eval, delete the numbers folder
-    - In train, delete the folders titled original number, original sign, other number, other sign
-    - Remove all spaces, ie. convert decimal val to just decimal, plus cleaned to just plus
-2. Create folder named Datasets in the project. This is where the training and eval datasets will be located
-3. Run the Dataload ipynb to create the eval_dataset and training_dataset.pt files
+## Project Set-up
+
+1. Download the [handwritten math symbol dataset](https://www.kaggle.com/datasets/clarencezhao/handwritten-math-symbol-dataset/data) as a zip.
+2. Unzip the dataset into the **Math-Symbol-Vision** project.
+3. Pre-process the subdirectories:
+    - In the `eval/` directory, delete the `number/` subdirectory.
+    - In the `train/` directory, delete the `original number/`, `original sign/`, `other number/`, and `other sign/` subdirectories.
+    - Remove all whitespaces from the names of subdirectories in `eval/` and `train/`. For example, `decimal val/` should be renamed to `decimal_val`.
+4. Create a directory named `datasets` in the project. This is where the eval and train datasets will be located.
+5. Run `dataload.ipynb`, which will create the `eval_dataset.pt` and `training_dataset.pt` files.
